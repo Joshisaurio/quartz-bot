@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, InteractionContextType, REST, Routes } = require('discord.js');
-const { token } = require('./env/info.env');
+const { token } = require('./env/info');
 
 const commands = [
     new SlashCommandBuilder()
