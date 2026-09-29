@@ -1,5 +1,5 @@
 const { Client, Events, GatewayIntentBits } = require('discord.js');
-const { token } = require('./env/info.json');
+const { token } = require('./info.json');
 
 const commands = require('./commands/export');
 
