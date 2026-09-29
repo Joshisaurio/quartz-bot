@@ -11,6 +11,22 @@ const commands = [
             InteractionContextType.PrivateChannel
         ])
         .toJSON(),
+
+    new SlashCommandBuilder()
+        .setName('kick')
+        .setDescription('Kick a user')
+        .setContexts([
+            InteractionContextType.Guild,
+            InteractionContextType.BotDM,
+            InteractionContextType.PrivateChannel
+        ])
+        .addUserOption(option =>
+            option
+            .setName('target')
+            .setDescription('The user to select')
+            .setRequired(true)
+    );
+            .toJSON(),
 ];
 
 const rest = new REST({ version: '10' }).setToken(token);
