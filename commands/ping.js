@@ -28,7 +28,7 @@ async function ping(interaction) {
         });
     } else {
         return interaction.editReply(components.container(
-            "Error while fetching username information!",
+            "Error while fetching ping information!",
             16756224
         ));
     }
