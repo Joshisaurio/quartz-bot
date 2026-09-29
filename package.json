@@ -1,0 +1,12 @@
+{
+  "name": "quartz-bot",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "register": "node register.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.19.3"
+  }
+}
