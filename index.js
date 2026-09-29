@@ -10,4 +10,8 @@ const client = new Client({
     ]
 });
 
+client.once(Events.ClientReady, (readyClient) => {
+    console.log(`logged in as ${readyClient.user.tag}`);
+});
+
 client.login(process.env.DISCORD_TOKEN);
