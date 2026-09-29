@@ -6,41 +6,40 @@ const {
     ButtonBuilder,
     ButtonStyle
 } = require('discord.js');
-const get = require('../functions/fetch');
-const components = require('../components/export');
+const commands = require('../commands/export');
 
 async function kick(interaction) {
     await interaction.deferReply();
 
     const user = interaction.options.getUser('target');
     let container;
+    let body;
 
-    try {
-        const member = await interaction.guild.members.fetch(user.id);
-        await member.kick();
-        body = `Successfully kicked ${user.tag}.`;
-    } catch (error) {
-        body = `Error: ${error}`;
+    if (user) {
+        try {
+            const member = await interaction.guild.members.fetch(user.id);
+            await member.kick();
+            body = `Successfully kicked ${user.tag}.`;
+        } catch (error) {
+            body = `Error: ${error.message || error}`;
+        }
+
+        container = new ContainerBuilder()
+            .setAccentColor(5763719)
+            .addTextDisplayComponents(
+                new TextDisplayBuilder().setContent(body)
+            );
+
+        return interaction.editReply({
+            components: [container],
+            flags: MessageFlags.IsComponentsV2
+        });
+    } else {
+        return interaction.editReply(components.container(
+            "Error while fetching username information!",
+            16756224
+        ));
     }
-
-    container = new ContainerBuilder()
-        .setAccentColor(5763719)
-        .addTextDisplayComponents(
-            new TextDisplayBuilder().setContent(body)
-        );
-
-
-    return interaction.editReply({
-        components: [container],
-        flags: MessageFlags.IsComponentsV2
-    });
-
-} else {
-    return interaction.editReply(components.container(
-        "Error while fetching username information!",
-        16756224
-    ));
-}
 }
 
 module.exports = kick;
