@@ -22,11 +22,11 @@ const commands = [
         ])
         .addUserOption(option =>
             option
-            .setName('target')
-            .setDescription('The user to select')
-            .setRequired(true)
-    );
-            .toJSON(),
+                .setName('target')
+                .setDescription('The user to select')
+                .setRequired(true)
+        )
+        .toJSON(),
 ];
 
 const rest = new REST({ version: '10' }).setToken(token);
