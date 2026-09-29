@@ -1,8 +1,6 @@
 const { Client, Events, GatewayIntentBits } = require('discord.js');
-require('dotenv').config({ path: './env/info.env' });
+const { token } = require('./env/info.json');
 
-const token = process.env.TOKEN;
-const clientId = process.env.CLIENT_ID;
 const commands = require('./commands/export');
 
 const messageHandlers = []; 
