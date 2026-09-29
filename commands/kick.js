@@ -12,7 +12,7 @@ const components = require('../components/export');
 async function kick(interaction) {
     await interaction.deferReply();
 
-    const username = interaction.options.getUser('target');
+    const user = interaction.options.getUser('target');
     let container;
 
     try {
@@ -43,4 +43,4 @@ async function kick(interaction) {
 }
 }
 
-module.exports = checkusername;
+module.exports = kick;
