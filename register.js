@@ -1,7 +1,5 @@
 const { SlashCommandBuilder, InteractionContextType, REST, Routes } = require('discord.js');
-require('dotenv').config({ path: './env/info.env' });
-const token = process.env.TOKEN;
-const clientId = process.env.CLIENT_ID;
+const { token, clientId } = require('./env/info.json');
 
 const commands = [
     new SlashCommandBuilder()
