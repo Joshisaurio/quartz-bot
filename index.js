@@ -1,5 +1,5 @@
 const { Client, Events, GatewayIntentBits, ChannelType } = require('discord.js');
-const { token } = require('./env/info.env');
+const { token } = require('./env/info');
 const commands = require('./commands/export');
 
 const client = new Client({
