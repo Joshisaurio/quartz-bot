@@ -21,7 +21,7 @@ async function kick(interaction) {
             await member.kick();
             body = `Successfully kicked ${user.tag}.`;
         } catch (error) {
-            body = `Error: ${error.message || error}`;
+            body = `Error: ${error.message}`;
         }
 
         container = new ContainerBuilder()
