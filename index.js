@@ -1,4 +1,4 @@
-const { Client, Events, GatewayIntentBits, ChannelType, WebhookClient, AuditLogEvent } = require('discord.js');
+const { Client, Events, GatewayIntentBits, ChannelType } = require('discord.js');
 const { token } = require('./env/info.env');
 const commands = require('./commands/export');
 
