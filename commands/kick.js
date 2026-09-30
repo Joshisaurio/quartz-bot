@@ -12,6 +12,7 @@ async function kick(interaction) {
     await interaction.deferReply();
 
     const user = interaction.options.getUser('target');
+    const reason = interaction.options.getString('reason');
     let container;
     let body;
 
@@ -19,7 +20,7 @@ async function kick(interaction) {
         try {
             const member = await interaction.guild.members.fetch(user.id);
             await member.kick();
-            body = `Successfully kicked ${user.tag}.`;
+            body = `# Kicked ${user.tag}.\n**Reason**: ${reason}`;
         } catch (error) {
             body = `Error: ${error.message}`;
         }
