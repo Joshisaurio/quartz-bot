@@ -26,7 +26,7 @@ const commands = [
                 .setDescription('The user to select')
                 .setRequired(true)
         )
-        .addUserOption(option =>
+        .addStringOption(option =>
             option
                 .setName('reason')
                 .setDescription('The reason')
