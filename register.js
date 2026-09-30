@@ -26,6 +26,12 @@ const commands = [
                 .setDescription('The user to select')
                 .setRequired(true)
         )
+        .addUserOption(option =>
+            option
+                .setName('reason')
+                .setDescription('The reason')
+                .setRequired(false)
+        )
         .toJSON(),
 ];
 
