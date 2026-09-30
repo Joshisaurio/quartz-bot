@@ -19,8 +19,8 @@ async function kick(interaction) {
     if (user) {
         try {
             const member = await interaction.guild.members.fetch(user.id);
-            await member.kick();
-            body = `# Kicked ${user.tag}.\n**Reason**: ${reason}`;
+            await member.kick(reason);
+            body = `## Kicked ${user.tag}.\n**Reason**: ${reason}`;
         } catch (error) {
             body = `Error: ${error.message}`;
         }
